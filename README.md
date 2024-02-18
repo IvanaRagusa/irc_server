@@ -13,6 +13,40 @@ IRC (Internet Relay Chat) - an application-level Protocol for exchanging message
 
 ## :star2: About the Project
 
+This project involves the development of a multi-client chat server using C++ and leveraging the epoll mechanism for efficient event handling. The system is structured around three main classes: Server, Client, and Channel. The Server class manages the core functionality of the chat server, including handling incoming connections, managing clients, and facilitating communication between clients through channels. The Client class represents individual client connections to the server, handling tasks such as sending and receiving messages. Channels, implemented through the Channel class, provide a means for organizing and managing group communications among clients.
+
+### Detailed Description:
+The project is implemented in C++98, adhering to the standard while utilizing advanced features and techniques for robustness and efficiency. The use of epoll, a scalable I/O event notification mechanism available on Linux systems, ensures optimal handling of multiple client connections without unnecessary resource consumption.
+
+### Server Class:
+
+Manages incoming client connections and facilitates communication between clients.
+Utilizes epoll for efficient event-driven handling of client interactions.
+Maintains data structures such as maps to manage clients and channels.
+Provides methods for creating, joining, and leaving channels.
+Implements thread safety mechanisms to handle concurrent client requests.
+
+### Client Class:
+
+Represents individual client connections to the server.
+Handles sending and receiving messages to and from the server.
+Manages the state of the client connection, including connection status and associated channel membership.
+Implements error handling and recovery mechanisms for robust communication.
+
+### Channel Class:
+
+Represents communication channels for organizing group interactions among clients.
+Provides methods for adding and removing clients from channels.
+Supports sending messages to all clients within a channel.
+Implements channel-specific settings and permissions.
+
+### Additional Features:
+
+Support for command-line interface for server administration and client interaction.
+Implementation of user authentication and access control mechanisms.
+Integration of logging functionality for monitoring and debugging purposes.
+Implementation of signal handling for graceful server shutdown and error recovery.
+
 ## :toolbox: Getting Started
 
 ### :bangbang: Prerequisites
@@ -72,3 +106,7 @@ you can kick someone frome a channel if you are operator
 /KICK #CHANNEL username
 ```
 fun with other command like: /PART /INVITE /PRIVMSG /QUIT /TOPIC
+
+## Conclusion
+
+This project demonstrates a comprehensive implementation of a multi-client chat server in C++, leveraging advanced features such as epoll for efficient event handling. The modular design allows for scalability and flexibility, making it suitable for various chat application scenarios. Additionally, adherence to C++98 standards ensures compatibility and portability across different environments.
